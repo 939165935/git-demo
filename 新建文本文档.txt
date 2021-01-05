@@ -1,0 +1,41 @@
+linux-centos-7版本才支持
+安装git的依赖项：
+yum install curl-devel expat-devel gettext-devel openss-devel zlib-devel
+yum install gcc perl-ExtUtils-MakeMaker
+移除已经安装的git
+yum remove git
+预编译
+./configure --prefix=/usr/local/git-2.9.5
+编译并安装
+make && make install
+ln -s /usr/local/git-2.9.5/bin/* /usr/bin/
+
+https://mirrors.163.com
+
+工作区->暂存区->本地仓库->远程仓库
+git入门级命令
+git --version
+git 或git --help
+git init
+
+git add “”当前路径下（和.git一样）
+git commit -m “”
+
+初次运行前
+git config --global user.email “study@example.com”
+git config --global user.name “study”
+
+echo“# git-demo”>> README.md
+zzh是库的名字,这是shell命令。
+意思是：把#SVue这个文本插入到READE.md文件中。
+git init
+这个意思是在当前项目的目录中生成本地的git管理（会发现在当前目录下多了一个.git文件夹）
+git add .
+这个是将项目上所有的文件添加到仓库中的意思，如果想添加某个特定的文件，只需把.换成这个特定的文件名即可。
+git commit -m“first commit”
+表示你对这次提交的注释，双引号里面的内容可以根据个人的需要改。
+git remote add origin https://github.com/939165935/git-demo.git
+自己的仓库url地址（HTTPS或者SSH）
+git push -u origin master
+首次运行此命令：需要输入用户名和密码
+这是把项目上传到github仓库的意思。
